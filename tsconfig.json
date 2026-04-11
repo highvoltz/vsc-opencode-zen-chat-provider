@@ -10,7 +10,15 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node", "vscode"]
+    "types": ["node"],
+    "paths": {
+      "vscode": ["./vscode.d.ts"]
+    }
   },
-  "include": ["src"]
+  "include": [
+	"src",
+	"vscode.d.ts",
+	"vscode.proposed.chatProvider.d.ts",
+	"vscode.proposed.languageModelThinkingPart.d.ts"
+  ]
 }

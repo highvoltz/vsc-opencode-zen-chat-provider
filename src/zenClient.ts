@@ -11,6 +11,7 @@ export type ToolMode = 'auto' | 'required';
 
 export type StreamCallbacks = {
 	onTextDelta: (delta: string) => void;
+	onThinkingDelta: (delta: string) => void;
 	onToolCall: (args: { toolCallId: string; toolName: string; input: object }) => void;
 };
 
@@ -183,7 +184,7 @@ export async function streamZen(
 			if (part.type === 'reasoning-delta') {
 				if (part.text && part.text.length > 0) {
 					emitted = true;
-					callbacks.onTextDelta(part.text);
+					callbacks.onThinkingDelta(part.text);
 				}
 				continue;
 			}
