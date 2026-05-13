@@ -276,7 +276,7 @@ function simplifyTextOnlyContent(parts: any[]): any {
 
 function dataPartToAiSdkPart(part: vscode.LanguageModelDataPart): any | undefined {
 	// VS Code may include internal metadata such as cache_control in Agent/Plan mode.
-	if (part.mimeType === 'cache_control') {
+	if (part.mimeType === 'cache_control' || part.mimeType === 'stateful_marker') {
 		return undefined;
 	}
 
